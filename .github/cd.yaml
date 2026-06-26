@@ -13,7 +13,7 @@ jobs:
         runs-on: self-hosted
         steps: 
             - name: Code Checkout
-              usees: actions/checkout@v7
+              uses: actions/checkout@v7
 
             - name: Copy Example Env to main Env
               run: cp .env.example .env
@@ -28,7 +28,4 @@ jobs:
               run: |
                 docker compose pull
                 docker compose up -d
-    deploy:
-        needs: [frontend,backend]
-        uses: ./.github/workflows/cd.yaml   
-        secrets: inherit  
+     
