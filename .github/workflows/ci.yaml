@@ -25,6 +25,9 @@ jobs:
       - name: Install Node.js dependencies
         run: npm ci
 
+      - name: Setup ESLint configfile
+        run: npm init@eslint/config@latest
+
       - name: Run ESLint
         run: npm run lint
 
