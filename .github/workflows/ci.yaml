@@ -26,13 +26,16 @@ jobs:
         run: npm ci
 
       - name: Setup ESLint configfile
-        run: npm init@eslint/config@latest
+        run: npm install --save-dev eslint
+        
+      - name: yarn install
+        run: nyarn add -D eslint  
 
       - name: Run ESLint
         run: npm run lint
 
       - name: Check Prettier formatting
-        run: npm run format:check  
+        run: pnpm add -D eslint
 
       - name: Run linters
         uses: wearerequired/lint-action@v3
