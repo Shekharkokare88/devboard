@@ -25,6 +25,12 @@ jobs:
       - name: Install Node.js dependencies
         run: npm ci
 
+      - name: Run ESLint
+        run: npm run lint
+
+      - name: Check Prettier formatting
+        run: npm run format:check  
+
       - name: Run linters
         uses: wearerequired/lint-action@v3
         with:
